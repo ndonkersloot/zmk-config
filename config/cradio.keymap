@@ -23,6 +23,16 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+
+        ht_shift: hold_tap_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp>, <&kp LSHFT>;
+        };
     };
 
     combos {
@@ -55,7 +65,7 @@
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │  O       │
-            &ht LGUI  A   &ht LALT R   &ht LCTRL S   &ht LSHFT T   &kp G        &kp M   &ht RSHFT N   &ht RCTRL E   &ht RALT I   &ht RGUI O
+            &ht LGUI  A   &ht LALT R   &ht LCTRL S   &ht_shift T   &kp G        &kp M   &ht_shift N   &ht RCTRL E   &ht RALT I   &ht RGUI O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ BSPC     │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &ht DOT QMARK  &kp BSPC
