@@ -54,12 +54,12 @@
 
         combo_parant {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <13 12>;
+            key-positions = <2 3>;
         };
 
         combo_rpar {
             bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <16 17>;
+            key-positions = <6 7>;
         };
 
         combo_lbrc {
@@ -78,9 +78,9 @@
 
         base_layer {
             bindings = <
-&ht EXCLAMATION Q  &ht AT_SIGN W  &ht HASH F   &kp P        &ht MINUS B      &ht UNDERSCORE J      &kp L        &kp U        &kp Y             &kp SQT
-&ht LGUI A         &ht LALT R     &ht LCTRL S  &ht LSHFT T  &kp G            &kp M                 &ht RSHFT N  &ht LCTRL E  &ht LEFT_ALT I    &ht LEFT_GUI O
-&kp Z              &kp X          &kp C        &kp D        &kp V            &kp K                 &kp H        &kp COMMA    &ht QUESTION DOT  &kp ENTER
+&ht EXCLAMATION Q  &ht AT_SIGN W  &ht HASH F   &kp P        &ht MINUS B      &ht SEMICOLON J       &kp L        &kp U                &kp Y           &kp SQT
+&ht LGUI A         &ht LALT R     &ht LCTRL S  &ht LSHFT T  &kp G            &kp M                 &ht RSHFT N  &ht LCTRL E          &ht LEFT_ALT I  &ht LEFT_GUI O
+&kp Z              &kp X          &kp C        &kp D        &kp V            &kp K                 &kp H        &ht BACKSLASH COMMA  &ht SLASH DOT   &kp ENTER
                                                &to LNUMBER  &ht TAB SPACE    &ht DELETE BACKSPACE  &to LSYMBOL
             >;
         };
@@ -89,7 +89,7 @@
             bindings = <
 &kp F1       &kp F2           &kp F3        &kp F4         &kp HOME    &kp HOME  &kp N7                    &kp N8                &kp N9                  &trans
 &ht LGUI F5  &ht LEFT_ALT F6  &ht LCTRL F7  &ht LSHIFT F8  &kp DEL     &kp DEL   &ht RIGHT_SHIFT NUMBER_4  &ht RIGHT_CONTROL N5  &ht RIGHT_ALT NUMBER_6  &ht RIGHT_GUI N0
-&kp F9       &kp F10          &kp F11       &kp F12        &kp END     &kp END   &kp N1                    &kp N2                &kp N3                  &trans
+&kp F9       &kp F10          &kp F11       &kp F12        &kp END     &kp END   &kp N1                    &kp N2                &ht DOT NUMBER_3        &trans
                                             &to LNAV       &trans      &trans    &to LBASE
             >;
         };
