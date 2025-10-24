@@ -9,9 +9,9 @@
 
 #define LBASE 0
 #define LNUMBER 1
-#define LNAV 2
-#define LSYMBOL 3
-#define LSYSTEM 4
+#define LSYMBOL 2
+#define LNAV 3
+#define LMOUSE 4
 
 / {
     behaviors {
@@ -23,6 +23,16 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
+        };
+
+        lht: layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&tog>, <&mo>;
         };
     };
 
@@ -37,13 +47,13 @@
 
         combo_lsystem {
             timeout-ms = <80>;
-            key-positions = <30 33>; // Outer thumb
+            key-positions = <30 33>;
             bindings = <&to LSYSTEM>;
         };
 
         combo_lbase {
             timeout-ms = <80>;
-            key-positions = <31 32>; // Inner thumb
+            key-positions = <31 32>;
             bindings = <&to LBASE>;
         };
 
@@ -81,7 +91,7 @@
 &ht EXCLAMATION Q  &ht AT_SIGN W  &ht HASH F   &kp P        &ht MINUS B      &ht SEMICOLON J       &kp L        &kp U                &kp Y           &kp SQT
 &ht LGUI A         &ht LALT R     &ht LCTRL S  &ht LSHFT T  &kp G            &kp M                 &ht RSHFT N  &ht LCTRL E          &ht LEFT_ALT I  &ht LEFT_GUI O
 &kp Z              &kp X          &kp C        &kp D        &kp V            &kp K                 &kp H        &ht BACKSLASH COMMA  &ht SLASH DOT   &kp ENTER
-                                               &to LNUMBER  &ht TAB SPACE    &ht DELETE BACKSPACE  &to LSYMBOL
+                                               &lht LNUMBER LNAV  &ht TAB SPACE    &ht DELETE BACKSPACE  &lht LSYMBOL LMOUSE
             >;
         };
 
@@ -90,16 +100,7 @@
 &kp F1       &kp F2           &kp F3        &kp F4         &kp HOME    &kp HOME  &kp N7                    &kp N8                &kp N9                  &trans
 &ht LGUI F5  &ht LEFT_ALT F6  &ht LCTRL F7  &ht LSHIFT F8  &kp DEL     &kp DEL   &ht RIGHT_SHIFT NUMBER_4  &ht RIGHT_CONTROL N5  &ht RIGHT_ALT NUMBER_6  &ht RIGHT_GUI N0
 &kp F9       &kp F10          &kp F11       &kp F12        &kp END     &kp END   &kp N1                    &kp N2                &ht DOT NUMBER_3        &trans
-                                            &to LNAV       &trans      &trans    &to LBASE
-            >;
-        };
-
-        navigation_layer {
-            bindings = <
-&trans  &trans  &trans  &trans     &trans    &kp HOME  &trans          &trans              &trans          &kp PAGE_UP
-&trans  &trans  &trans  &trans     &trans    &kp LEFT  &ht RSHFT DOWN  &ht RCTRL UP_ARROW  &ht RALT RIGHT  &ht RGUI PAGE_DOWN
-&trans  &trans  &trans  &trans     &trans    &kp END   &trans          &trans              &trans          &trans
-                        &to LBASE  &trans    &trans    &to LBASE
+                                            &trans         &trans      &trans    &trans
             >;
         };
 
@@ -108,16 +109,25 @@
 &trans    &kp LBKT  &kp LBRC  &kp RBRC  &trans       &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT  &kp TILDE
 &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE
 &trans    &trans    &trans    &trans    &trans       &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE  &trans
-                              &trans    &trans       &trans     &to LBASE
+                              &trans    &trans       &trans     &trans
             >;
         };
 
-        system_layer {
+        navigation_layer {
             bindings = <
-&sys_reset   &trans  &trans          &trans      &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
-&bootloader  &trans  &studio_unlock  &trans      &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
-&trans       &trans  &trans          &bt BT_CLR  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
-                                     &trans      &trans          &trans  &trans
+&trans  &trans  &trans  &trans     &trans    &kp HOME  &kp PAGE_UP   &trans        &trans     &trans
+&trans  &trans  &trans  &trans     &trans    &kp LEFT  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans     &trans    &kp END   &kp PAGE_DOWN &trans        &trans     &trans
+                        &trans     &trans    &trans    &trans
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+&trans           &trans           &trans           &trans             &trans          &trans          &mmv SCRL_UP          &trans          &trans          &trans
+&mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT    &trans          &trans          &mkp LCLK             &mkp RCLK       &mkp MCLK       &trans          
+&trans           &trans           &trans           &trans             &trans          &trans          &mmv SCRL_DOWN        &trans          &trans          &trans
+                        &trans     &trans    &trans    &trans
             >;
         };
     };
