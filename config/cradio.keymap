@@ -32,7 +32,7 @@
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
-            bindings = <&tog>, <&mo>;
+            bindings = <&mo>, <&tog>;
         };
     };
 
@@ -85,7 +85,7 @@
 &ht EXCLAMATION Q  &ht AT_SIGN W  &ht HASH F   &kp P        &ht MINUS B      &ht SEMICOLON J       &kp L        &kp U                &kp Y           &kp SQT
 &ht LGUI A         &ht LALT R     &ht LCTRL S  &ht LSHFT T  &kp G            &kp M                 &ht RSHFT N  &ht LCTRL E          &ht LEFT_ALT I  &ht LEFT_GUI O
 &kp Z              &kp X          &kp C        &kp D        &kp V            &kp K                 &kp H        &ht BACKSLASH COMMA  &ht SLASH DOT   &kp ENTER
-                                               &lht 3 1     &ht TAB SPACE    &ht DELETE BACKSPACE  &lht 4 2
+                                            &lht LNAV LNUMBER &ht TAB SPACE    &ht DELETE BACKSPACE  &lht LMOUSE LSYMBOL
             >;
         };
 
