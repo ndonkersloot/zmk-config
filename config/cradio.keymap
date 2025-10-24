@@ -82,10 +82,10 @@
 
         base_layer {
             bindings = <
-&ht EXCLAMATION Q  &ht AT_SIGN W  &ht HASH F   &kp P              &ht MINUS B      &ht SEMICOLON J       &kp L                &kp U                &kp Y           &kp SQT
-&ht LGUI A         &ht LALT R     &ht LCTRL S  &ht LSHFT T        &kp G            &kp M                 &ht RSHFT N          &ht LCTRL E          &ht LEFT_ALT I  &ht LEFT_GUI O
-&kp Z              &kp X          &kp C        &kp D              &kp V            &kp K                 &kp H                &ht BACKSLASH COMMA  &ht SLASH DOT   &kp ENTER
-                                               &lht LNUMBER LNAV  &ht TAB SPACE    &ht DELETE BACKSPACE  &lht LSYMBOL LMOUSE
+&ht EXCLAMATION Q  &ht AT_SIGN W  &ht HASH F   &kp P        &ht MINUS B      &ht SEMICOLON J       &kp L        &kp U                &kp Y           &kp SQT
+&ht LGUI A         &ht LALT R     &ht LCTRL S  &ht LSHFT T  &kp G            &kp M                 &ht RSHFT N  &ht LCTRL E          &ht LEFT_ALT I  &ht LEFT_GUI O
+&kp Z              &kp X          &kp C        &kp D        &kp V            &kp K                 &kp H        &ht BACKSLASH COMMA  &ht SLASH DOT   &kp ENTER
+                                               &lht 3 1     &ht TAB SPACE    &ht DELETE BACKSPACE  &lht 4 2
             >;
         };
 
