@@ -45,12 +45,6 @@
             bindings = <&kp ESC>;
         };
 
-        combo_lsystem {
-            timeout-ms = <80>;
-            key-positions = <30 33>;
-            bindings = <&to LSYSTEM>;
-        };
-
         combo_lbase {
             timeout-ms = <80>;
             key-positions = <31 32>;
@@ -124,9 +118,9 @@
 
         mouse_layer {
             bindings = <
-&trans           &trans           &trans           &trans             &trans          &trans          &mmv SCRL_UP          &trans          &trans          &trans
-&mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT    &trans          &trans          &mkp LCLK             &mkp RCLK       &mkp MCLK       &trans          
-&trans           &trans           &trans           &trans             &trans          &trans          &mmv SCRL_DOWN        &trans          &trans          &trans
+&trans           &trans           &trans           &trans             &trans          &trans          &msc SCRL_UP          &trans          &trans          &trans
+&mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT    &trans          &msc SCRL_LEFT  &mkp LCLK             &mkp RCLK       &mkp MCLK       &msc SCRL_RIGHT          
+&trans           &trans           &trans           &trans             &trans          &trans          &msc SCRL_DOWN        &trans          &trans          &trans
                         &trans     &trans    &trans    &trans
             >;
         };
