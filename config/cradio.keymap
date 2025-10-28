@@ -65,11 +65,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press   LEFT_CONTROL>
-                , <&macro_press   LEFT_ALT>
-                , <&msc           SCRL_UP>
-                , <&macro_release LEFT_ALT>
-                , <&macro_release LEFT_CONTROL>
+                = <&macro_press   &kp LEFT_CONTROL>
+                , <&macro_press   &kp LEFT_ALT>
+                , <&macro_tap   &msc SCRL_UP>
+                , <&macro_release &kp LEFT_ALT>
+                , <&macro_release &kp LEFT_CONTROL>
                 ;
         };
 
@@ -77,11 +77,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press   LEFT_CONTROL>
-                , <&macro_press   LEFT_ALT>
-                , <&msc           SCRL_DOWN>
-                , <&macro_release LEFT_ALT>
-                , <&macro_release LEFT_CONTROL>
+                = <&macro_press   &kp LEFT_CONTROL>
+                , <&macro_press   &kp LEFT_ALT>
+                , <&macro_tap   &msc SCRL_DOWN>
+                , <&macro_release &kp LEFT_ALT>
+                , <&macro_release &kp LEFT_CONTROL>
                 ;
         };
     };
