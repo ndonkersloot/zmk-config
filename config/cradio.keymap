@@ -34,6 +34,53 @@
             require-prior-idle-ms = <100>;
             bindings = <&mo>, <&to>;
         };
+
+        mm_period: mod_morph_period {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_bspc: mod_morph_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
+        };
+
+        mm_space: mod_morph_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp TAB>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+
+        wrkspc_left: workspace_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   LEFT_CONTROL
+                &macro_press   LEFT_ALT
+                &msc SCRL_UP
+                &macro_release LEFT_ALT
+                &macro_release LEFT_CONTROL
+            >;
+        };
+
+        wrkspc_right: workspace_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   LEFT_CONTROL
+                &macro_press   LEFT_ALT
+                &msc SCRL_DOWN
+                &macro_release LEFT_ALT
+                &macro_release LEFT_CONTROL
+            >;
+        };
     };
 
     combos {
@@ -69,8 +116,8 @@
             bindings = <
 &kp Q       &kp W       &kp F        &kp P              &kp B        &kp J          &kp L                &kp U        &kp Y           &kp SQT
 &ht LGUI A  &ht LALT R  &ht LCTRL S  &ht LSHFT T        &kp G        &kp M          &ht RSHFT N          &ht LCTRL E  &ht LEFT_ALT I  &ht LEFT_GUI O
-&kp Z       &kp X       &kp C        &kp D              &kp V        &kp K          &kp H                &kp COMMA    &kp PERIOD      &kp ENTER
-                                     &lht LNAV LNUMBER  &kp SPACE    &kp BACKSPACE  &lht LMOUSE LSYMBOL
+&kp Z       &kp X       &kp C        &kp D              &kp V        &kp K          &kp H                &kp COMMA    &mm_period      &kp ENTER
+                                     &lht LNAV LNUMBER  &mm_space    &mm_bspc  &lht LMOUSE LSYMBOL
             >;
         };
 
@@ -94,10 +141,10 @@
 
         navigation_layer {
             bindings = <
-&none  &none  &none  &none   &none     &kp HOME  &kp PAGE_UP    &kp UP    &none      &none
-&none  &none  &none  &none   &none     &none     &kp LEFT       &kp DOWN  &kp RIGHT  &none
-&none  &none  &none  &none   &none     &kp END   &kp PAGE_DOWN  &none     &none      &none
-                     &trans  &trans    &trans    &trans
+&none     &none     &none      &none       &none     &kp HOME       &kp PAGE_UP    &kp UP    &none      &none
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &none     &wrkspc_left   &kp LEFT       &kp DOWN  &kp RIGHT  &workspace_right
+&none     &none     &none      &none       &none     &kp END        &kp PAGE_DOWN  &none     &none      &none
+                               &trans      &trans    &trans         &trans
             >;
         };
 
