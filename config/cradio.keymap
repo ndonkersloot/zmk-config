@@ -64,23 +64,25 @@
         wrkspc_left: workspace_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press LEFT_CONTROL>,
-                <&macro_press LEFT_ALT>,
-                <&msc SCRL_UP>,
-                <&macro_release LEFT_ALT>,
-                <&macro_release LEFT_CONTROL>;
+            bindings
+                = <&macro_press   LEFT_CONTROL>
+                , <&macro_press   LEFT_ALT>
+                , <&msc           SCRL_UP>
+                , <&macro_release LEFT_ALT>
+                , <&macro_release LEFT_CONTROL>
+                ;
         };
 
         wrkspc_right: workspace_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press LEFT_CONTROL>,
-                <&macro_press LEFT_ALT>,
-                <&msc SCRL_DOWN>,
-                <&macro_release LEFT_ALT>,
-                <&macro_release LEFT_CONTROL>;
+            bindings
+                = <&macro_press   LEFT_CONTROL>
+                , <&macro_press   LEFT_ALT>
+                , <&msc           SCRL_DOWN>
+                , <&macro_release LEFT_ALT>
+                , <&macro_release LEFT_CONTROL>
+                ;
         };
     };
 
