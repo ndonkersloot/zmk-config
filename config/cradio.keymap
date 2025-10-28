@@ -142,7 +142,7 @@
         navigation_layer {
             bindings = <
 &none     &none     &none      &none       &none     &kp HOME       &kp PAGE_UP    &kp UP    &none      &none
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &none     &wrkspc_left   &kp LEFT       &kp DOWN  &kp RIGHT  &workspace_right
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &none     &wrkspc_left   &kp LEFT       &kp DOWN  &kp RIGHT  &wrkspc_right
 &none     &none     &none      &none       &none     &kp END        &kp PAGE_DOWN  &none     &none      &none
                                &trans      &trans    &trans         &trans
             >;
