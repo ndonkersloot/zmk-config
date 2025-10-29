@@ -67,8 +67,9 @@
             bindings
                 = <&macro_press   &kp LEFT_CONTROL>
                 , <&macro_press   &kp LEFT_ALT>
+                , <&macro_wait_time 100>
                 , <&macro_press   &msc SCRL_UP>
-                , <&macro_wait_time 1200>
+                , <&macro_wait_time 1600>
                 , <&macro_release &msc SCRL_UP>
                 , <&macro_release &kp LEFT_ALT>
                 , <&macro_release &kp LEFT_CONTROL>
@@ -81,8 +82,9 @@
             bindings
                 = <&macro_press   &kp LEFT_CONTROL>
                 , <&macro_press   &kp LEFT_ALT>
+                , <&macro_wait_time 100>
                 , <&macro_press   &msc SCRL_DOWN>
-                , <&macro_wait_time 1200>
+                , <&macro_wait_time 1600>
                 , <&macro_release &msc SCRL_DOWN>
                 , <&macro_release &kp LEFT_ALT>
                 , <&macro_release &kp LEFT_CONTROL>
