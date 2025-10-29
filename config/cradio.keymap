@@ -60,36 +60,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
-
-        wrkspc_left: workspace_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press   &kp LEFT_CONTROL>
-                , <&macro_press   &kp LEFT_ALT>
-                , <&macro_wait_time 100>
-                , <&macro_press   &msc SCRL_UP>
-                , <&macro_wait_time 1600>
-                , <&macro_release &msc SCRL_UP>
-                , <&macro_release &kp LEFT_ALT>
-                , <&macro_release &kp LEFT_CONTROL>
-                ;
-        };
-
-        wrkspc_right: workspace_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press   &kp LEFT_CONTROL>
-                , <&macro_press   &kp LEFT_ALT>
-                , <&macro_wait_time 100>
-                , <&macro_press   &msc SCRL_DOWN>
-                , <&macro_wait_time 1600>
-                , <&macro_release &msc SCRL_DOWN>
-                , <&macro_release &kp LEFT_ALT>
-                , <&macro_release &kp LEFT_CONTROL>
-                ;
-        };
     };
 
     combos {
@@ -116,9 +86,6 @@
             bindings = <&kp PRINTSCREEN>;
             key-positions = <8 9>;
         };
-    };
-
-    macros {
     };
 
     keymap {
@@ -153,10 +120,10 @@
 
         navigation_layer {
             bindings = <
-&none     &none     &none      &none      &none     &kp HOME      &kp PAGE_UP    &kp UP    &none      &none
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &wrkspc_left  &kp LEFT       &kp DOWN  &kp RIGHT  &wrkspc_right
-&none     &none     &none      &none      &none     &kp END       &kp PAGE_DOWN  &none     &none      &none
-                               &trans     &trans    &trans        &trans
+&none     &none     &none      &none      &none     &kp HOME          &kp PAGE_UP    &kp UP    &none      &none
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp LC(LA(LEFT))  &kp LEFT       &kp DOWN  &kp RIGHT  &kp LA(LC(RIGHT))
+&none     &none     &none      &none      &none     &kp END           &kp PAGE_DOWN  &none     &none      &none
+                               &trans     &trans    &trans            &trans
             >;
         };
 
