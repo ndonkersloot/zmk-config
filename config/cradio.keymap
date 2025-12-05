@@ -25,6 +25,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        ht_space: hold_tap_space {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <120>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <0>;
+            bindings = <&mm_space>, <&kp LSHFT>;
+        };
+
         lht: layer_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -96,7 +106,7 @@
 &kp Q       &kp W       &kp F        &kp P              &kp B        &kp J     &kp L                &kp U        &kp Y           &kp SQT
 &ht LGUI A  &ht LALT R  &ht LCTRL S  &ht LSHFT T        &kp G        &kp M     &ht RSHFT N          &ht LCTRL E  &ht LEFT_ALT I  &ht LEFT_GUI O
 &kp Z       &kp X       &kp C        &kp D              &kp V        &kp K     &kp H                &kp COMMA    &mm_period      &kp ENTER
-                                     &lht LNAV LNUMBER  &mm_space    &mm_bspc  &lht LMOUSE LSYMBOL
+                                     &lht LNAV LNUMBER  &ht_space    &mm_bspc  &lht LMOUSE LSYMBOL
             >;
         };
 
