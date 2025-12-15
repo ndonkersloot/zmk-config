@@ -98,7 +98,7 @@
         };
 
         combo_mouseless {
-            bindings = <&kp RA(RC(F13))>;
+            bindings = <&kp F13>;
             key-positions = <24 23>;
         };
     };
